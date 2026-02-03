@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Berke'nin Sürprizi ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+    
+    body { 
+      margin: 0; padding: 0; overflow-x: hidden; 
+      touch-action: manipulation; -webkit-tap-highlight-color: transparent; 
+      font-family: sans-serif; background-color: #fff1f2;
+    }
+    ::-webkit-scrollbar { display: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Animasyonlar */
+    @keyframes bounce-custom {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-15px); }
+      60% { transform: translateY(-7px); }
+    }
+    .animate-bounce-custom { animation: bounce-custom 2s infinite; }
+    
+    @keyframes petal-fall {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      100% { transform: translate(var(--tw-translate-x), 600px) rotate(360deg); opacity: 0; }
+    }
+    .animate-petal-fall { animation: petal-fall 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+
+    @keyframes emoji-fly {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-150px) scale(2) rotate(20deg); opacity: 0; }
+    }
+    .animate-emoji { animation: emoji-fly 1s ease-out forwards; }
+
+    @keyframes stamp-slam {
+      0% { transform: scale(3) translateY(-200px) rotate(-20deg); opacity: 0; }
+      50% { transform: scale(1) translateY(0) rotate(0deg); opacity: 1; }
+      60% { transform: scale(1.1) rotate(2deg); }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+    .animate-stamp { animation: stamp-slam 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+
+    .hug-arm { transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .hug-active .hug-arm-left { transform: translateX(340px) rotate(5deg); }
+    .hug-active .hug-arm-right { transform: translateX(-340px) rotate(-5deg); }
+    .hug-active .hug-target { transform: scale(1.05); transition: transform 0.8s; }
+
+    .font-dancing { font-family: 'Dancing Script', cursive; }
+    
+    .shooting-star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow: 0 0 10px white;
+      animation: shoot linear infinite;
+    }
+    @keyframes shoot {
+      0% { transform: translate(0, 0) rotate(-45deg); opacity: 1; }
+      100% { transform: translate(-400px, 400px) rotate(-45deg); opacity: 0; }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
